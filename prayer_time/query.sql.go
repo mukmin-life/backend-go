@@ -16,8 +16,8 @@ WHERE date = $1 AND zone = $2 LIMIT 1
 `
 
 type GetPrayerTimeParams struct {
-	Date time.Time `db:"date" json:"date"`
-	Zone string    `db:"zone" json:"zone"`
+	Date time.Time
+	Zone string
 }
 
 func (q *Queries) GetPrayerTime(ctx context.Context, arg GetPrayerTimeParams) (PrayerTime, error) {

@@ -36,7 +36,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/prayer_time.PrayerTime"
+                            "$ref": "#/definitions/prayer_time.PrayerTimeOutput"
                         }
                     }
                 }
@@ -44,13 +44,10 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "prayer_time.PrayerTime": {
+        "prayer_time.PrayerTimeOutput": {
             "type": "object",
             "properties": {
                 "asr": {
-                    "type": "string"
-                },
-                "date": {
                     "type": "string"
                 },
                 "dhuhr": {
@@ -69,9 +66,6 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "syuruk": {
-                    "type": "string"
-                },
-                "zone": {
                     "type": "string"
                 }
             }

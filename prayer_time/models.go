@@ -9,17 +9,17 @@ import (
 )
 
 type PrayerTime struct {
-	Date    time.Time `db:"date" json:"date"`
-	Zone    string    `db:"zone" json:"zone"`
-	Imsak   time.Time `db:"imsak" json:"imsak"`
-	Fajr    time.Time `db:"fajr" json:"fajr"`
-	Syuruk  time.Time `db:"syuruk" json:"syuruk"`
-	Dhuhr   time.Time `db:"dhuhr" json:"dhuhr"`
-	Asr     time.Time `db:"asr" json:"asr"`
-	Maghrib time.Time `db:"maghrib" json:"maghrib"`
-	Isha    time.Time `db:"isha" json:"isha"`
+	Date    time.Time
+	Zone    string
+	Imsak   time.Time
+	Fajr    time.Time
+	Syuruk  time.Time
+	Dhuhr   time.Time
+	Asr     time.Time
+	Maghrib time.Time
+	Isha    time.Time
 }
 
 type SchemaMigration struct {
-	Version string `db:"version" json:"version"`
+	Version string
 }
