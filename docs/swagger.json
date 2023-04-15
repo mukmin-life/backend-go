@@ -1,7 +1,51 @@
 {
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "title": "Mukmin Life API",
+        "contact": {
+            "name": "Mukmin Life API Support",
+            "email": "hello@mukmin.life"
+        },
+        "license": {
+            "name": "Proprietary"
+        },
+        "version": "1.0"
     },
-    "paths": {}
+    "host": "localhost:3000",
+    "basePath": "/v2",
+    "paths": {
+        "/prayer_time/": {
+            "get": {
+                "description": "get prayer time by date",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "List prayer times of the day",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prayer_time.Author"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "prayer_time.Author": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }

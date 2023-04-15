@@ -10,13 +10,13 @@ import (
 )
 
 const getAuthor = `-- name: GetAuthor :one
-SELECT id, name, bio FROM authors
+SELECT id, name FROM authors
 WHERE id = $1 LIMIT 1
 `
 
 func (q *Queries) GetAuthor(ctx context.Context, id int64) (Author, error) {
 	row := q.db.QueryRowContext(ctx, getAuthor, id)
 	var i Author
-	err := row.Scan(&i.ID, &i.Name, &i.Bio)
+	err := row.Scan(&i.ID, &i.Name)
 	return i, err
 }

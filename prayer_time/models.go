@@ -4,12 +4,9 @@
 
 package prayer_time
 
-import (
-	"database/sql"
-)
+import ()
 
 type Author struct {
-	ID   int64          `db:"id" json:"id"`
-	Name string         `db:"name" json:"name"`
-	Bio  sql.NullString `db:"bio" json:"bio"`
+	ID   int64  `db:"id" json:"id"`
+	Name string `db:"name" json:"name"`
 }

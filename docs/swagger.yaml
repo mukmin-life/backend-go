@@ -1,4 +1,33 @@
+basePath: /v2
+definitions:
+  prayer_time.Author:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+host: localhost:3000
 info:
-  contact: {}
-paths: {}
+  contact:
+    email: hello@mukmin.life
+    name: Mukmin Life API Support
+  license:
+    name: Proprietary
+  title: Mukmin Life API
+  version: "1.0"
+paths:
+  /prayer_time/:
+    get:
+      consumes:
+      - application/json
+      description: get prayer time by date
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prayer_time.Author'
+      summary: List prayer times of the day
 swagger: "2.0"
