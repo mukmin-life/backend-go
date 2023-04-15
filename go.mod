@@ -5,7 +5,9 @@ go 1.20
 require (
 	github.com/arsmn/fiber-swagger/v2 v2.31.1
 	github.com/gofiber/fiber/v2 v2.44.0
+	github.com/lib/pq v1.10.8
 	github.com/swaggo/fiber-swagger v1.3.0
+	github.com/swaggo/swag v1.8.12
 )
 
 require (
@@ -33,7 +35,6 @@ require (
 	github.com/savsgio/gotils v0.0.0-20230208104028-c358bd845dee // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/swaggo/files v0.0.0-20220610200504-28940afbdbfe // indirect
-	github.com/swaggo/swag v1.8.12 // indirect
 	github.com/tinylib/msgp v1.1.8 // indirect
 	github.com/urfave/cli/v2 v2.3.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect

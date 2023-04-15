@@ -2,7 +2,7 @@ version: "2"
 sql:
   - engine: "postgresql"
     queries: "db/prayer_time/query.sql"
-    schema: "db/prayer_time/schema/db/schema.sql"
+    schema: "db/prayer_time/schema/schema.sql"
     gen:
       go:
         package: "prayer_time"
