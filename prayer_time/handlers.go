@@ -10,7 +10,7 @@ import (
 // @Description  get prayer time by date
 // @Accept       json
 // @Produce      json
-// @Success      200  {object}  Author
+// @Success      200  {object}  PrayerTime
 // @Router       /prayer_time/ [get]
 func GetPrayerTime(c *fiber.Ctx) error {
 	prayer_times := []PrayerTime{
