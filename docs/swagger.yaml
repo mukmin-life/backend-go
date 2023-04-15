@@ -1,10 +1,24 @@
 basePath: /v2
 definitions:
-  prayer_time.Author:
+  prayer_time.PrayerTime:
     properties:
-      id:
-        type: integer
-      name:
+      asr:
+        type: string
+      date:
+        type: string
+      dhuhr:
+        type: string
+      fajr:
+        type: string
+      imsak:
+        type: string
+      isha:
+        type: string
+      maghrib:
+        type: string
+      syuruk:
+        type: string
+      zone:
         type: string
     type: object
 host: localhost:3000
@@ -28,6 +42,6 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/prayer_time.Author'
+            $ref: '#/definitions/prayer_time.PrayerTime'
       summary: List prayer times of the day
 swagger: "2.0"

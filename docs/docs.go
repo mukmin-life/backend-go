@@ -36,7 +36,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/prayer_time.Author"
+                            "$ref": "#/definitions/prayer_time.PrayerTime"
                         }
                     }
                 }
@@ -44,13 +44,34 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "prayer_time.Author": {
+        "prayer_time.PrayerTime": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "integer"
+                "asr": {
+                    "type": "string"
                 },
-                "name": {
+                "date": {
+                    "type": "string"
+                },
+                "dhuhr": {
+                    "type": "string"
+                },
+                "fajr": {
+                    "type": "string"
+                },
+                "imsak": {
+                    "type": "string"
+                },
+                "isha": {
+                    "type": "string"
+                },
+                "maghrib": {
+                    "type": "string"
+                },
+                "syuruk": {
+                    "type": "string"
+                },
+                "zone": {
                     "type": "string"
                 }
             }
