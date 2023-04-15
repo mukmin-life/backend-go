@@ -19,3 +19,7 @@ type PrayerTime struct {
 	Maghrib time.Time `db:"maghrib" json:"maghrib"`
 	Isha    time.Time `db:"isha" json:"isha"`
 }
+
+type SchemaMigration struct {
+	Version string `db:"version" json:"version"`
+}
