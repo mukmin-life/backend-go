@@ -4,9 +4,18 @@
 
 package prayer_time
 
-import ()
+import (
+	"time"
+)
 
-type Author struct {
-	ID   int64  `db:"id" json:"id"`
-	Name string `db:"name" json:"name"`
+type PrayerTime struct {
+	Date    time.Time `db:"date" json:"date"`
+	Zone    string    `db:"zone" json:"zone"`
+	Imsak   time.Time `db:"imsak" json:"imsak"`
+	Fajr    time.Time `db:"fajr" json:"fajr"`
+	Syuruk  time.Time `db:"syuruk" json:"syuruk"`
+	Dhuhr   time.Time `db:"dhuhr" json:"dhuhr"`
+	Asr     time.Time `db:"asr" json:"asr"`
+	Maghrib time.Time `db:"maghrib" json:"maghrib"`
+	Isha    time.Time `db:"isha" json:"isha"`
 }

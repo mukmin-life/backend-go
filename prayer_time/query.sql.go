@@ -7,16 +7,32 @@ package prayer_time
 
 import (
 	"context"
+	"time"
 )
 
-const getAuthor = `-- name: GetAuthor :one
-SELECT id, name FROM authors
-WHERE id = $1 LIMIT 1
+const getPrayerTime = `-- name: GetPrayerTime :one
+SELECT date, zone, imsak, fajr, syuruk, dhuhr, asr, maghrib, isha FROM prayer_times
+WHERE date = $1 AND zone = $2 LIMIT 1
 `
 
-func (q *Queries) GetAuthor(ctx context.Context, id int64) (Author, error) {
-	row := q.db.QueryRowContext(ctx, getAuthor, id)
-	var i Author
-	err := row.Scan(&i.ID, &i.Name)
+type GetPrayerTimeParams struct {
+	Date time.Time `db:"date" json:"date"`
+	Zone string    `db:"zone" json:"zone"`
+}
+
+func (q *Queries) GetPrayerTime(ctx context.Context, arg GetPrayerTimeParams) (PrayerTime, error) {
+	row := q.db.QueryRowContext(ctx, getPrayerTime, arg.Date, arg.Zone)
+	var i PrayerTime
+	err := row.Scan(
+		&i.Date,
+		&i.Zone,
+		&i.Imsak,
+		&i.Fajr,
+		&i.Syuruk,
+		&i.Dhuhr,
+		&i.Asr,
+		&i.Maghrib,
+		&i.Isha,
+	)
 	return i, err
 }

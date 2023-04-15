@@ -1,6 +1,10 @@
 package prayer_time
 
-import	"github.com/gofiber/fiber/v2"
+import (
+	"time"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 // @Summary      List prayer times of the day
 // @Description  get prayer time by date
@@ -9,7 +13,18 @@ import	"github.com/gofiber/fiber/v2"
 // @Success      200  {object}  Author
 // @Router       /prayer_time/ [get]
 func GetPrayerTime(c *fiber.Ctx) error {
-	prayer_times := []Author{{ID: 1, Name: "test"}}
+	prayer_times := []PrayerTime{
+		{
+			Date: time.Now(),
+			Zone: "JHR01",
+			Imsak: time.Now(),
+			Fajr: time.Now(), 
+			Dhuhr: time.Now(), 
+			Asr: time.Now(), 
+			Maghrib: time.Now(), 
+			Isha: time.Now(),
+		},
+	}
 
 	return c.JSON(prayer_times)
 }

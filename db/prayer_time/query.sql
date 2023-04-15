@@ -1,3 +1,3 @@
--- name: GetAuthor :one
-SELECT * FROM authors
-WHERE id = $1 LIMIT 1;
+-- name: GetPrayerTime :one
+SELECT * FROM prayer_times
+WHERE date = $1 AND zone = $2 LIMIT 1;
