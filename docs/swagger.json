@@ -14,7 +14,7 @@
     "host": "localhost:3000",
     "basePath": "/v2",
     "paths": {
-        "/prayer_time/": {
+        "/prayer_time/{date}": {
             "get": {
                 "description": "get prayer time by date",
                 "consumes": [
@@ -24,6 +24,15 @@
                     "application/json"
                 ],
                 "summary": "List prayer times of the day",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Date",
+                        "name": "date",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",

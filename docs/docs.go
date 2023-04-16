@@ -22,7 +22,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/prayer_time/": {
+        "/prayer_time/{date}": {
             "get": {
                 "description": "get prayer time by date",
                 "consumes": [
@@ -32,6 +32,15 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "summary": "List prayer times of the day",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Date",
+                        "name": "date",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",

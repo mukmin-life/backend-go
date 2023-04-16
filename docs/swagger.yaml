@@ -27,11 +27,17 @@ info:
   title: Mukmin Life API
   version: "1.0"
 paths:
-  /prayer_time/:
+  /prayer_time/{date}:
     get:
       consumes:
       - application/json
       description: get prayer time by date
+      parameters:
+      - description: Date
+        in: path
+        name: date
+        required: true
+        type: string
       produces:
       - application/json
       responses:
