@@ -50,5 +50,6 @@ func GetPrayerTime(c *fiber.Ctx) error {
 		Isha: prayer_time.Isha,
 	}
 
+	c.Set("Cache-Control", "public, max-age=300, s-maxage=600")
 	return c.JSON(output)
 }
