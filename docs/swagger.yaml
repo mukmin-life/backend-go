@@ -38,6 +38,11 @@ paths:
         name: date
         required: true
         type: string
+      - description: Zone
+        in: path
+        name: zone
+        required: true
+        type: string
       produces:
       - application/json
       responses:

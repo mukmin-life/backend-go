@@ -39,6 +39,13 @@ const docTemplate = `{
                         "name": "date",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Zone",
+                        "name": "zone",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
