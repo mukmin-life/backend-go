@@ -6,5 +6,5 @@ sql:
     gen:
       go:
         package: "prayer_time"
-        out: "prayer_time"
+        out: "modules/prayer_time"
         emit_all_enum_values: true

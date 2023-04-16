@@ -4,7 +4,7 @@ import (
 
 	_ "github.com/mukmin-life/docs"
 	"github.com/mukmin-life/db"
-	prayer_api "github.com/mukmin-life/prayer_time"
+	prayer_api "github.com/mukmin-life/modules/prayer_time"
 
 	"log"
 
