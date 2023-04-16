@@ -22,6 +22,7 @@ type PrayerTimeOutput struct {
 // @Summary      List prayer times of the day
 // @Description  get prayer time by date
 // @Param date path string true "Date"
+// @Param zone path string true "Zone"
 // @Accept       json
 // @Produce      json
 // @Success      200  {object}  PrayerTimeOutput
@@ -33,12 +34,14 @@ func GetPrayerTime(c *fiber.Ctx) error {
 		return err
 	}
 
+	zone := c.Params("zone")
+
 	ctx := context.Background()
 
 	db :=  db.Connection
 	queries := New(db)
 	prayer_time, err := queries.GetPrayerTime(ctx, GetPrayerTimeParams{
-		Date: date, Zone: "JHR01",
+		Date: date, Zone: zone,
 	})
 	if err != nil {
 		return err

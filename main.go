@@ -36,7 +36,7 @@ func main() {
 	v2 := api.Group("/v2")
 
 	prayer_time := v2.Group("/prayer_time")
-	prayer_time.Get("/:date", prayer_api.GetPrayerTime)
+	prayer_time.Get("/:zone/:date", prayer_api.GetPrayerTime)
 
     log.Fatal(app.Listen(":3000"))
 }

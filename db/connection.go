@@ -2,6 +2,7 @@ package db
 
 import (
 	"os"
+	"time"
 	"database/sql"
 )
 
@@ -12,6 +13,11 @@ func Connect() (err error) {
 	if err != nil {
 		return err
 	}
+
+	Connection.SetMaxOpenConns(200)
+	Connection.SetMaxIdleConns(200)
+	Connection.SetConnMaxLifetime(5*time.Minute)
+
 
 	return nil
 }
