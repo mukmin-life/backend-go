@@ -27,7 +27,7 @@ info:
   title: Mukmin Life API
   version: "1.0"
 paths:
-  /prayer_time/{date}:
+  /prayer_time/{zone}/{date}:
     get:
       consumes:
       - application/json

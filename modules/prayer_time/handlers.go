@@ -26,7 +26,7 @@ type PrayerTimeOutput struct {
 // @Accept       json
 // @Produce      json
 // @Success      200  {object}  PrayerTimeOutput
-// @Router       /prayer_time/{date} [get]
+// @Router       /prayer_time/{zone}/{date} [get]
 func GetPrayerTime(c *fiber.Ctx) error {
 
 	date, err := time.Parse("2006-01-02", c.Params("date"))

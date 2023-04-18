@@ -22,7 +22,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/prayer_time/{date}": {
+        "/prayer_time/{zone}/{date}": {
             "get": {
                 "description": "get prayer time by date",
                 "consumes": [
