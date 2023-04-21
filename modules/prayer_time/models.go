@@ -5,14 +5,13 @@
 package prayer_time
 
 import (
-	"database/sql"
 	"time"
 )
 
 type PrayerTime struct {
 	Date    time.Time
 	Zone    string
-	Hijri   sql.NullString
+	Hijri   string
 	Imsak   time.Time
 	Fajr    time.Time
 	Syuruk  time.Time

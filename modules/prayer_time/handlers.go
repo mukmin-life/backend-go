@@ -10,6 +10,7 @@ import (
 )
 
 type PrayerTimeOutput struct {
+	Hijri   string	 `json:"hijri"`
 	Imsak   time.Time `json:"imsak"`
 	Fajr    time.Time `json:"fajr"`
 	Syuruk  time.Time `json:"syuruk"`
@@ -48,6 +49,7 @@ func GetPrayerTime(c *fiber.Ctx) error {
 	}
 
 	output := PrayerTimeOutput{
+		Hijri: prayer_time.Hijri,
 		Imsak: prayer_time.Imsak,
 		Fajr: prayer_time.Fajr,
 		Syuruk: prayer_time.Syuruk,

@@ -72,6 +72,9 @@ const docTemplate = `{
                 "fajr": {
                     "type": "string"
                 },
+                "hijri": {
+                    "type": "string"
+                },
                 "imsak": {
                     "type": "string"
                 },
