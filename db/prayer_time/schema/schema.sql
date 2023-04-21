@@ -20,6 +20,7 @@ SET default_table_access_method = heap;
 CREATE TABLE public.prayer_times (
     date date NOT NULL,
     zone character varying(255) NOT NULL,
+    hijri character varying(255),
     imsak timestamp without time zone NOT NULL,
     fajr timestamp without time zone NOT NULL,
     syuruk timestamp without time zone NOT NULL,

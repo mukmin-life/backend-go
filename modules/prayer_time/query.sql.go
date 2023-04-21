@@ -11,7 +11,7 @@ import (
 )
 
 const getPrayerTime = `-- name: GetPrayerTime :one
-SELECT date, zone, imsak, fajr, syuruk, dhuhr, asr, maghrib, isha FROM prayer_times
+SELECT date, zone, hijri, imsak, fajr, syuruk, dhuhr, asr, maghrib, isha FROM prayer_times
 WHERE date = $1 AND zone = $2 LIMIT 1
 `
 
@@ -26,6 +26,7 @@ func (q *Queries) GetPrayerTime(ctx context.Context, arg GetPrayerTimeParams) (P
 	err := row.Scan(
 		&i.Date,
 		&i.Zone,
+		&i.Hijri,
 		&i.Imsak,
 		&i.Fajr,
 		&i.Syuruk,

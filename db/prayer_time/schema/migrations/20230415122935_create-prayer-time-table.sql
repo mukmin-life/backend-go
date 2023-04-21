@@ -2,6 +2,7 @@
 CREATE TABLE prayer_times (
   date DATE,
   zone VARCHAR (255),
+  hijri VARCHAR (255),
   imsak timestamp NOT NULL,
   fajr timestamp NOT NULL,
   syuruk timestamp NOT NULL,
