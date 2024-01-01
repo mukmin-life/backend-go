@@ -1,9 +1,8 @@
 package main
 
 import (
-
-	_ "github.com/mukmin-life/docs"
 	"github.com/mukmin-life/db"
+	_ "github.com/mukmin-life/docs"
 	prayer_api "github.com/mukmin-life/modules/prayer_time"
 
 	"log"
@@ -38,5 +37,5 @@ func main() {
 	prayer_time := v2.Group("/prayer_time")
 	prayer_time.Get("/:zone/:date", prayer_api.GetPrayerTime)
 
-    log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":3000"))
 }
